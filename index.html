@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дукон.tj — все магазины Таджикистана</title>
+  <meta name="description" content="Интерактивный справочник магазинов и торговых сетей Таджикистана: супермаркеты, рынки, торговые центры, электроника и онлайн-магазины в Душанбе, Худжанде, Бохтаре, Кулябе и других городах.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="logo" href="#top">
+        <span class="logo-icon">🛍️</span>
+        <span class="logo-text">Дукон<span class="accent">.tj</span></span>
+      </a>
+      <nav class="nav">
+        <a href="#catalog">Каталог</a>
+        <a href="#categories">Категории</a>
+        <a href="#about">О проекте</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="container">
+      <h1>Все магазины Таджикистана <span class="accent">в одном месте</span></h1>
+      <p class="hero-sub-top">Супермаркеты, рынки, торговые центры, электроника и онлайн-магазины — с поиском по названию, категориям и городам.</p>
+      <div class="stats">
+        <div class="stat"><span id="stat-shops">0</span><small>магазинов</small></div>
+        <div class="stat"><span id="stat-cities">0</span><small>городов</small></div>
+        <div class="stat"><span id="stat-cats">0</span><small>категорий</small></div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container" id="catalog">
+    <div class="toolbar">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="search" id="search" placeholder="Поиск: Auchan, Пайкар, Корвон..." autocomplete="off">
+      </div>
+      <select id="city-select" aria-label="Город">
+        <option value="">Все города</option>
+      </select>
+    </div>
+
+    <div class="sections-area">
+      <aside class="sidebar" id="categories">
+        <h2>Категории</h2>
+        <div id="cat-list" class="cat-list"></div>
+      </aside>
+
+      <section class="results">
+        <div class="results-head">
+          <h2 id="results-title">Каталог магазинов</h2>
+          <span id="results-count" class="results-count"></span>
+        </div>
+        <div id="cards" class="cards"></div>
+        <div id="empty" class="empty hidden">
+          <span class="empty-emoji">🙈</span>
+          <p>Ничего не найдено.<br>Попробуйте изменить запрос или сбросить фильтры.</p>
+          <button id="reset" class="btn btn-outline">Сбросить фильтры</button>
+        </div>
+        <p class="favorites-toggle-wrap">
+          <button id="fav-toggle" class="link-btn">⭐ Показать избранное</button>
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <section class="about" id="about">
+    <div class="container">
+      <h2>О проекте</h2>
+      <p>«Дукон.tj» — открытый справочник магазинов и торговых сетей Таджикистана. Здесь собраны крупные продуктовые сети (Auchan, Amid, Пайкар, Дастрас), известнейшие рынки (Корвон, Панчшанбе), торговые центры столицы, магазины электроники и сервисы онлайн-доставки.</p>
+      <div class="about-grid">
+        <div class="about-card"><span>🔎</span><b>Умный поиск</b><p>Ищите по названию, категории, городу и описанию — мгновенно, без перезагрузки страницы.</p></div>
+        <div class="about-card"><span>⭐</span><b>Избранное</b><p>Добавляйте любимые магазины в закладки — список сохраняется в вашем браузере.</p></div>
+        <div class="about-card"><span>➕</span><b>Легко расширить</b><p>Все данные хранятся в одном файле <code>data.js</code> — добавить новый магазин можно за минуту.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p><b>Дукон.tj</b> — справочник магазинов Таджикистана</p>
+      <p class="footer-note">Данные собраны из открытых источников. Адреса и режим работы уточняйте на официальных сайтах магазинов.</p>
+    </div>
+  </footer>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card">
+      <button class="modal-close" data-close aria-label="Закрыть">✕</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <button id="to-top" class="to-top" aria-label="Наверх">↑</button>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
